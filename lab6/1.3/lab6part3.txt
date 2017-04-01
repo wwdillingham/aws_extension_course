@@ -1,8 +1,12 @@
-"Lab6Part3Instance" : {
- "Type" : "AWS::EC2::Instance",
- "Properties" : {
-     "InstanceType" : "t2.micro",
-     "AvailabilityZone" : "us-east-1",
-     "ImageId" : "ami-1e817677",
+{
+    "Resources" : {
+        "Lab6Part3EC2" : {
+          "Type" : "AWS::EC2::Instance",
+          "Properties" : {
+            "InstanceType" : "t2.micro",
+            "AvailabilityZone" : "us-east-1b",
+            "ImageId" : "ami-1e817677",
+            }
+        }
  }
 }
