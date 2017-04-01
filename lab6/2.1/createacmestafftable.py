@@ -7,7 +7,7 @@ import sys
 
 # Get the service resource.
 dynamodb = boto3.resource('dynamodb')
-table_var='yourtablenamehere'
+table_var='acmestaff'
 # Create the DynamoDB table.
 try:
     table = dynamodb.create_table(
