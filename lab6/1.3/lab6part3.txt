@@ -1,19 +1,6 @@
 "Lab6Part3Instance" : {
  "Type" : "AWS::EC2::Instance",
  "Properties" : {
-     "SecurityGroups" : [ {
-         "Ref" : "vpc-3b78015d"
-     } ],
-     "UserData" : {
-         "Fn::Base64" : {
-             "Fn::Join" : [ ":", [
-                 "PORT=80",
-                 "TOPIC=", {
-                     "Ref" : "logical name of an AWS::SNS::Topic resource"
-                 } ]
-             ]
-         }
-      },
      "InstanceType" : "t2.micro",
      "AvailabilityZone" : "us-east-1",
      "ImageId" : "ami-1e817677",
