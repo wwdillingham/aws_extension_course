@@ -6,7 +6,7 @@ import boto3
 import json
 import decimal
 
-dynamodb = boto3.resource('dynamodb', region_name='us-west-2', endpoint_url="http://localhost:8000")
+dynamodb = boto3.resource('dynamodb',endpoint_url='https://dynamodb.us-east-1.amazonaws.com')
 try:
    table = dynamodb.Table('Movies')
    print("Instantiate a table: ",table.creation_date_time)
