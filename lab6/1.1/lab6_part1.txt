@@ -1,0 +1,7 @@
+{
+    "Resources" : {
+        "weslab6bucket" : {
+            "Type" : "AWS::S3::Bucket"
+            }
+        }
+}

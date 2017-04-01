@@ -1,0 +1,41 @@
+{
+  "Resources" : {
+   "S3Bucket" : {
+      "Type" : "AWS::S3::Bucket",
+      "Properties" : {
+         "AccessControl" : "PublicRead",
+         "BucketName" : "weslab6part2try4",
+         "WebsiteConfiguration" : {
+            "IndexDocument" : "index.html",
+            "ErrorDocument" : "error.html",
+            "RoutingRules": [
+                {
+                    "RoutingRuleCondition": {
+                        "HttpErrorCodeReturnedEquals": "404",
+                        "KeyPrefixEquals": "out1/"
+                    },
+                    "RedirectRule": {
+                        "HostName": "linux_web_server",
+                        "ReplaceKeyPrefixWith": "report-404/"
+                    }
+                }
+            ]
+         }
+      },
+      "DeletionPolicy" : "Retain"
+   }
+},
+
+"Outputs" : {
+   "WebsiteURL" : {
+      "Value" : { "Fn::GetAtt" : [ "S3Bucket", "WebsiteURL" ] },
+      "Description" : "URL for website hosted on S3"
+   },
+   "S3BucketSecureURL" : {
+      "Value" : { "Fn::Join" : [
+         "", [ "https://", { "Fn::GetAtt" : [ "S3Bucket", "DomainName" ] } ]
+      ] },
+      "Description" : "Name of S3 bucket to hold website content"
+   }
+}
+}
