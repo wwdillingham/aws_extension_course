@@ -18,7 +18,7 @@ try:
                 return int(o)
         return super(DecimalEncoder, self).default(o)
 
-   dynamodb = boto3.resource('dynamodb', region_name='us-west-2', endpoint_url="http://localhost:8000")
+   dynamodb = boto3.resource('dynamodb',endpoint_url='https://dynamodb.us-east-1.amazonaws.com')
    table = dynamodb.Table('Movies')
 
    print("Movies from 2012:")
