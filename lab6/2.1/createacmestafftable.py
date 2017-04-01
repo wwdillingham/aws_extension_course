@@ -6,7 +6,7 @@ import json
 import sys
 
 # Get the service resource.
-dynamodb = boto3.resource('dynamodb', region_name='us-east-1', endpoint_url="apigateway.us-east-1.amazonaws.com")
+dynamodb = boto3.resource('dynamodb',endpoint_url='https://dynamodb.us-east-1.amazonaws.com')
 table_var='acmestaff'
 # Create the DynamoDB table.
 try:
