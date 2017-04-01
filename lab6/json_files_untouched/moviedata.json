@@ -1,0 +1,100 @@
+[
+    {
+        "year": 2012,
+        "title": "Wreck-It Ralph",
+        "info": {
+            "directors": ["Rich Moore"],
+            "release_date": "2012-11-01T00:00:00Z",
+            "rating": 7.8,
+            "genres": [
+                "Animation",
+                "Adventure",
+                "Comedy",
+                "Family"
+            ],
+            "image_url": "http://ia.media-imdb.com/images/M/MV5BNzMxNTExOTkyMF5BMl5BanBnXkFtZTcwMzEyNDc0OA@@._V1_SX400_.jpg",
+            "plot": "A video game villain wants to be a hero and sets out to fulfill his dream, but his quest brings havoc to the whole arcade where he lives.",
+            "rank": 73,
+            "running_time_secs": 6480,
+            "actors": [
+                "John C. Reilly",
+                "Jack McBrayer",
+                "Jane Lynch"
+            ]
+        }
+    },
+    {
+        "year": 2013,
+        "title": "The Hobbit: The Desolation of Smaug",
+        "info": {
+            "directors": ["Peter Jackson"],
+            "release_date": "2013-12-11T00:00:00Z",
+            "genres": [
+                "Adventure",
+                "Drama",
+                "Fantasy"
+            ],
+            "image_url": "http://ia.media-imdb.com/images/M/MV5BMjAxMjMzMzAxOV5BMl5BanBnXkFtZTcwNTU3NzU2OQ@@._V1_SX400_.jpg",
+            "plot": "The Dwarves, Bilbo and Gandalf have successfully escaped the Misty Mountains, and Bilbo has gained the One Ring. They all continue their journey to get their gold back from the Dragon, Smaug.",
+            "rank": 74,
+            "actors": [
+                "Martin Freeman",
+                "Ian McKellen",
+                "Richard Armitage"
+            ]
+        }
+    },
+    {
+        "year": 2013,
+        "title": "Frozen",
+        "info": {
+            "directors": [
+                "Chris Buck",
+                "Jennifer Lee"
+            ],
+            "release_date": "2013-11-20T00:00:00Z",
+            "genres": [
+                "Animation",
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Family",
+                "Fantasy",
+                "Musical",
+                "Mystery",
+                "Romance",
+                "Thriller"
+            ],
+            "image_url": "http://ia.media-imdb.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_SX400_.jpg",
+            "plot": "Fearless optimist Anna teams up with Kristoff in an epic journey, encountering Everest-like conditions, and a hilarious snowman named Olaf in a race to find Anna's sister Elsa, whose icy powers have trapped the kingdom in eternal winter.",
+            "rank": 75,
+            "actors": [
+                "Kristen Bell",
+                "Josh Gad",
+                "Idina Menzel"
+            ]
+        }
+    },
+    {
+        "year": 2012,
+        "title": "Spring Breakers",
+        "info": {
+            "directors": ["Harmony Korine"],
+            "release_date": "2012-09-05T00:00:00Z",
+            "rating": 5.5,
+            "genres": [
+                "Crime",
+                "Drama"
+            ],
+            "image_url": "http://ia.media-imdb.com/images/M/MV5BNDE3MDQzMDA5OF5BMl5BanBnXkFtZTcwMTUxNTgxOQ@@._V1_SX400_.jpg",
+            "plot": "Four college girls who land in jail after robbing a restaurant in order to fund their spring break vacation find themselves bailed out by a drug and arms dealer who wants them to do some dirty work.",
+            "rank": 76,
+            "running_time_secs": 5640,
+            "actors": [
+                "Vanessa Hudgens",
+                "Selena Gomez",
+                "Ashley Benson"
+            ]
+        }
+    }
+]
