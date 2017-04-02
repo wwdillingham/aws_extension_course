@@ -9,7 +9,7 @@ import sys
 # Next line needs to be changed to reach DynamoDB in Amazon's cloud!  
 # Hint: http://boto3.readthedocs.io/en/latest/guide/dynamodb.html
 # http://boto3.readthedocs.io/en/latest/reference/services/dynamodb.html#table
-dynamodb = boto3.resource('dynamodb', region_name='us-west-2', endpoint_url="http://localhost:8000")
+dynamodb = boto3.resource('dynamodb',endpoint_url='https://dynamodb.us-east-1.amazonaws.com')
 
 try:
    table = dynamodb.Table('Movies')
