@@ -24,7 +24,7 @@ try:
    print("ITEMS in ACMESTAFF:")
 
    response = table.query(
-      KeyConditionExpression=Key('first_name').eq(*)
+      KeyConditionExpression=Key('first_name').exists()
 )
 
    for i in response['Items']:
