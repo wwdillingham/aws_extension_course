@@ -16,7 +16,7 @@ try:
     staffs = json.load(json_file, parse_float = decimal.Decimal)
     for staff in staffs:
         incr += 1
-        first_name = int(staff['first_name'])
+        first_name = staff['first_name']
         last_name = staff['last_name']
         print("Adding staff member ", incr," first name: ",first_name," last name ",last_name,)
 
