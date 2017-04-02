@@ -23,9 +23,7 @@ try:
 
    print("ITEMS in ACMESTAFF:")
 
-   response = table.query(
-      KeyConditionExpression=Key('first_name').exists()
-)
+   response = table.scan()
 
    for i in response['Items']:
        print(i['first_name'], ":", i['last_name'])
