@@ -1,0 +1,20 @@
+"PublicInSubnetAclEntry" : { 
+      "Type" : "AWS::EC2::NetworkAclEntry",
+      "Properties" : {
+        "NetworkAclId" : {"Ref" : "PublicSubnetAcl"},
+        "RuleNumber" : "32000",
+        "Protocol" : "-1",
+        "RuleAction" : "allow",
+        "Egress" : "false",
+        "CidrBlock" : "0.0.0.0/0",
+        "Icmp" : { "Code" : "-1", "Type" : "-1"},
+        "PortRange" : {"From" : "1", "To" : "65535"}
+      }
+    },
+
+    "PublicOutSubnetAclEntry" : {
+      "Type" : "AWS::EC2::NetworkAclEntry",
+      "Properties" : {
+        "NetworkAclId" : {"Ref" : "PublicSubnetAcl"},
+        "RuleNumber" : "32000",
+
