@@ -1,0 +1,39 @@
+{
+    "Resources" : {
+      "Lab6Part3EC2" : {
+        "Type" : "AWS::EC2::Instance",
+        "Properties" : {
+          "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
+          "InstanceType" : "t2.micro",
+          "AvailabilityZone" : "us-east-1b",
+          "ImageId" : "ami-c7fb46d1",
+          "UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
+            "#!/bin/bash -ex\n",
+            "touch /tmp/userdata_started | tee /tmp/userdata.log\n",
+            "yum -y update | tee /tmp/userdata.log\n",
+            "yum -y install httpd php mysql php-mysql | tee /tmp/userdata.log\n",
+            "chkconfig httpd on | tee /tmp/userdata.log\n",
+            "/etc/init.d/httpd start | tee /tmp/userdata.log\n",
+            "if [ ! -f /var/www/html/lab2-app.tar.gz ]; then | tee /tmp/userdata.log\n",
+            "cd /var/www/html | tee /tmp/userdata.log\n",
+            "wget https://s3-us-west-2.amazonaws.com/us-west-2-aws-staging/awsu-ilt/academy-cca/v3.0/labs/lab5-rds/scripts/lab5-app.tar.gz\n" ,
+            "chown apache:root /var/www/html/rds.conf.php | tee /tmp/userdata.log\n",
+            "fi\n",
+            "touch /tmp/userdata_finished | tee /tmp/userdata.log\n"
+              ]]}}
+        } 
+    },
+
+    "InstanceSecurityGroup" : {
+      "Type" : "AWS::EC2::SecurityGroup",
+      "Properties" : {
+        "GroupDescription" : "Enable World SSH,HTTP,HTTPS access",
+        "SecurityGroupIngress" : [
+        { "IpProtocol" : "tcp",  "FromPort" : "22", "ToPort" : "22", "CidrIp" : "0.0.0.0/0" },
+        { "IpProtocol" : "tcp",  "FromPort" : "80", "ToPort" : "80", "CidrIp" : "0.0.0.0/0" },
+        { "IpProtocol" : "tcp",  "FromPort" : "443", "ToPort" : "443", "CidrIp" : "0.0.0.0/0" }
+        ]
+      }
+    }
+  }
+}
