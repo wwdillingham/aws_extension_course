@@ -1,5 +1,5 @@
 {
-  "Id": "Policy1492008526874",
+  "Id": "Policy1492009007387",
   "Version": "2012-10-17",
   "Statement": [
     {
@@ -12,12 +12,12 @@
       "Principal": "*"
     },
     {
-      "Sid": "Stmt1492008501725",
+      "Sid": "Stmt1492009005918",
       "Action": [
         "s3:GetObject"
       ],
       "Effect": "Allow",
-      "Resource": "arn:aws:s3:::lab8-s3website",
+      "Resource": "arn:aws:s3:::lab8-s3website/*",
       "Principal": "*"
     }
   ]
