@@ -1,0 +1,24 @@
+{
+  "Id": "Policy1492008526874",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1492006935359",
+      "Action": [
+        "s3:DeleteBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::lab8-s3website",
+      "Principal": "*"
+    },
+    {
+      "Sid": "Stmt1492008501725",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::lab8-s3website",
+      "Principal": "*"
+    }
+  ]
+}
