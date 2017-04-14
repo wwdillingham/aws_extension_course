@@ -2,8 +2,10 @@
 
 import boto3
 s3 = boto3.resource('s3')
-client = boto3.client('s3')
 
-client.list_buckets()
+#create bucket
+s3.create_bucket(Bucket='transact-wdillingham')
 
-#s3.create_bucket(Bucket='transact-wdillingham')
+#list buckets
+for bucket in s3.buckets.all():
+        print(bucket.name)
