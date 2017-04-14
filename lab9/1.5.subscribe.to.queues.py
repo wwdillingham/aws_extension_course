@@ -11,5 +11,5 @@ collection_subscription_response = client.subscribe(
     Protocol='email',
     Endpoint='wes_dillingham@harvard.edu'
 )
-print(subscription_response)
+print(notification_subscription_response)
 print(collection_subscription_response)
