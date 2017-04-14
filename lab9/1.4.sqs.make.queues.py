@@ -1,8 +1,3 @@
-#Create 2 queues called: UserNotificationQueue and 
-#CreditCollectionQueue and list your new queues.  CCA Lab 12, Steps 23 – 27.  
-#Do this in Python.
-
-
 import boto3
 client = boto3.client('sqs')
 
