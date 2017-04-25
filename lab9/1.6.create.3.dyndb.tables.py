@@ -35,7 +35,7 @@ table2 = dynamodb.create_table(
 TableName='Transactions',
 KeySchema=[
     {
-        'AttributeName': 'CustomerId',
+        'AttributeName': 'TransactionId',
         'KeyType': 'RANGE'
     },
     {
