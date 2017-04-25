@@ -21,7 +21,7 @@ KeySchema=[
 ],
 AttributeDefinitions=[
     {
-        'AttributeName': 'string',
+        'AttributeName': 'CustomerId',
         'AttributeType': 'S'
     },
 ],
