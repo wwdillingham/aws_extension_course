@@ -6,7 +6,7 @@ table2 = dynamodb.create_table(
 TableName='Transactions',
 KeySchema=[
     {
-        'AttributeName': 'TransactionId',
+        'AttributeName': 'CustomerId',
         'KeyType': 'HASH'
     },
     {
@@ -19,6 +19,10 @@ AttributeDefinitions=[
         'AttributeName': 'TransactionId',
         'AttributeType': 'S'
     },
+    {
+        'AttributeName': 'CustomerId',
+        'AttributeType': 'S'
+    }
 ],
 ProvisionedThroughput={
     'ReadCapacityUnits': 5,
