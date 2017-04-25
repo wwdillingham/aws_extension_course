@@ -16,7 +16,7 @@ TableName='Customer',
 KeySchema=[
     {
         'AttributeName': 'CustomerId',
-        'KeyType': 'STRING' 
+        'KeyType': 'HASH' 
     }
 ]
 )
