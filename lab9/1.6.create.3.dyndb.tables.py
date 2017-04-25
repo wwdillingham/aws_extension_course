@@ -16,7 +16,7 @@ TableName='Customer',
 KeySchema=[
     {
         'AttributeName': 'CustomerId',
-        'KeyType': 'RANGE'
+        'KeyType': 'HASH'
     }
 ],
 AttributeDefinitions=[
@@ -36,7 +36,7 @@ TableName='Transactions',
 KeySchema=[
     {
         'AttributeName': 'TransactionId',
-        'KeyType': 'RANGE'
+        'KeyType': 'HASH'
     },
     {
         'AttributeName': 'TransactionId',
