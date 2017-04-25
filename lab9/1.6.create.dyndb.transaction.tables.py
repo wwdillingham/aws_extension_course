@@ -16,7 +16,7 @@ KeySchema=[
 ],
 AttributeDefinitions=[
     {
-        'AttributeName': 'CustomerId',
+        'AttributeName': 'TransactionId',
         'AttributeType': 'S'
     },
 ],
@@ -25,7 +25,7 @@ ProvisionedThroughput={
     'WriteCapacityUnits': 5
 },
 StreamSpecification={
-    'StreamEnabled': True|False,
+    'StreamEnabled': True,
     'StreamViewType': 'NEW_IMAGE'
     }
 )
