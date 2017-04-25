@@ -18,5 +18,15 @@ KeySchema=[
         'AttributeName': 'CustomerId',
         'KeyType': 'HASH' 
     }
-]
+],
+AttributeDefinitions=[
+    {
+        'AttributeName': 'string',
+        'AttributeType': 'S'
+    },
+],
+ProvisionedThroughput={
+    'ReadCapacityUnits': 5,
+    'WriteCapacityUnits': 5
+}
 )
