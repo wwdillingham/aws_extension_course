@@ -10,12 +10,13 @@ import boto3
 
 dynamodb = boto3.resource('dynamodb',endpoint_url='https://dynamodb.us-east-1.amazonaws.com')
 
-try:
-    table = dynamodb.create_table(
-    TableName='Customer',
-    KeySchema=[
-        {
-            'AttributeName': 'CustomerId',
-            'KeyType': 'STRING' 
-        }
+
+table = dynamodb.create_table(
+TableName='Customer',
+KeySchema=[
+    {
+        'AttributeName': 'CustomerId',
+        'KeyType': 'STRING' 
+    }
+]
 )
