@@ -16,19 +16,19 @@ bucket_policy = '''{
             "Effect": "Allow",
             "Principal": {"Service": "cloudtrail.amazonaws.com"},
             "Action": "s3:GetBucketAcl",
-            "Resource": "arn:aws:s3:::myBucketName"
+            "Resource": "arn:aws:s3:::acme-logs-wdillingham"
         },
         {
             "Sid": "AWSCloudTrailWrite20150319",
             "Effect": "Allow",
             "Principal": {"Service": "cloudtrail.amazonaws.com"},
             "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::myBucketName/[optional prefix]/AWSLogs/myAccountID/*",
+            "Resource": "arn:aws:s3:::acme-logs-wdillingham/AWSLogs/644009940612/*",
             "Condition": {"StringEquals": {"s3:x-amz-acl": "bucket-owner-full-control"}}
         }
     ]
 }'''
-print(bucket_policy)
+#print(bucket_policy)
 policy_response = client.put_bucket_policy(
     Bucket='acme-logs-wdillingham',
     Policy=bucket_policy
