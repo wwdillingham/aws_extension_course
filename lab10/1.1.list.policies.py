@@ -10,3 +10,4 @@ for bucket in s3.buckets.all():
 response = client.get_bucket_policy(
         Bucket='acme-logs-wdillingham'
 )
+print(response)
