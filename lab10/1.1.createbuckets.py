@@ -28,7 +28,7 @@ bucket_policy = '''{
         }
     ]
 }'''
-
+print(bucket_policy)
 policy_response = client.put_bucket_policy(
     Bucket='acme-logs-wdillingham',
     Policy=bucket_policy
