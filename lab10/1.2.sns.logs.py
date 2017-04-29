@@ -10,7 +10,8 @@ print(the_arn)
 
 topic_response = client.set_topic_attributes(
     TopicArn=the_arn,
-    AttributeName='AcmeLogs'
+    AttributeName='DisplayName',
+    AttributeValue='AcmeLogs'
 )
 
 print(topic_response)
