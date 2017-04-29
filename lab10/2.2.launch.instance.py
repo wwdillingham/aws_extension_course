@@ -8,5 +8,6 @@ response = client.run_instances(
   SecurityGroups=[
           'sg-a06f88df',
       ],
+  KeyName='initial_key'
 )
 
