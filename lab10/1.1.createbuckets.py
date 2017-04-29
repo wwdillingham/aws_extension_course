@@ -8,16 +8,33 @@ client = boto3.client('s3')
 s3.create_bucket(Bucket='acme-source-wdillingham')
 s3.create_bucket(Bucket='acme-logs-wdillingham')
 
-provided_policy = './policy.json'
-with open(provided_policy, 'r') as policy:
-        the_policy = json.load(policy)
+bucket_policy = '''{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AWSCloudTrailAclCheck20150319",
+            "Effect": "Allow",
+            "Principal": {"Service": "cloudtrail.amazonaws.com"},
+            "Action": "s3:GetBucketAcl",
+            "Resource": "arn:aws:s3:::myBucketName"
+        },
+        {
+            "Sid": "AWSCloudTrailWrite20150319",
+            "Effect": "Allow",
+            "Principal": {"Service": "cloudtrail.amazonaws.com"},
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::myBucketName/[optional prefix]/AWSLogs/myAccountID/*",
+            "Condition": {"StringEquals": {"s3:x-amz-acl": "bucket-owner-full-control"}}
+        }
+    ]
+}'''
+
+
+print(the_policy)
 
 log_bucket = s3.Bucket('acme-logs-wdillingham')
 policy_response = client.put_bucket_policy(
     Bucket='acme-logs-wdillingham',
-    Policy=json.dumps(the_policy)
+    Policy=bucket_policy
 )
-print(policy_response)
-#list buckets
-for bucket in s3.buckets.all():
-        print(bucket.name)
+
