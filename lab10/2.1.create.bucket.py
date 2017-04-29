@@ -9,6 +9,8 @@ s3.create_bucket(Bucket='acme-source-wdillingham-resized')
 
 #upload to lab 1 bucket
 lab1bucket = 'acme-source-wdillingham'
+bucket = s3.Bucket(lab1bucket)
+
 data = open('HappyFace.jpg', 'rb')
 s3.Bucket(lab1bucket).put_object(Key='HappyFace.jpg', Body=data)
 
@@ -17,6 +19,6 @@ for bucket in s3.buckets.all():
         print(bucket.name)
 
 #list objects in that bucket
-for object in lab1bucket.objects.all():
+for object in bucket.objects.all():
     print(object)
 
