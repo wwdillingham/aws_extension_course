@@ -11,8 +11,7 @@ provided_policy = './policy.json'
 with open(provided_policy, 'r') as policy:
         the_policy = json.load(policy)
 
-log_bucket = s3.BucketPolicy('acme-logs-wdillingham')
-
+log_bucket = s3.Bucket('acme-logs-wdillingham')
 policy_response = log_bucket.put_bucket_policy(
     Bucket='acme-logs-wdillingham',
     Policy=json.dumps(the_policy)
