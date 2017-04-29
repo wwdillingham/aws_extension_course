@@ -6,6 +6,7 @@ response = client.create_topic(
 )
 
 the_arn = response['TopicArn']
+print(the_arn)
 
 topic_response = client.set_topic_attributes(
     TopicArn=the_arn,
