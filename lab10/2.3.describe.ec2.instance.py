@@ -9,3 +9,4 @@ response = client.describe_instances(
         'i-069637b51da1ea574',
     ],
 )
+print(response)
