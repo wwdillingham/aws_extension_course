@@ -12,4 +12,4 @@ response = client.run_instances(
   MinCount=1,
   MaxCount=1
 )
-
+print(response)
