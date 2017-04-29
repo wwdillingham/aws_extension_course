@@ -1,5 +1,4 @@
 #list acme-source* buckets and list their policies
-l
 import json
 import boto3
 s3 = boto3.resource('s3')
