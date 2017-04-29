@@ -9,5 +9,7 @@ response = client.run_instances(
           'sg-a06f88df',
       ],
   KeyName='initial_key'
+  MinCount=1
+  MaxCount=1
 )
 
