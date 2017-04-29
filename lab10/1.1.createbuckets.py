@@ -29,10 +29,6 @@ bucket_policy = '''{
     ]
 }'''
 
-
-print(the_policy)
-
-log_bucket = s3.Bucket('acme-logs-wdillingham')
 policy_response = client.put_bucket_policy(
     Bucket='acme-logs-wdillingham',
     Policy=bucket_policy
