@@ -2,6 +2,7 @@
 import json
 import boto3
 s3 = boto3.resource('s3')
+client = boto3.client('s3')
 
 #create bucket
 s3.create_bucket(Bucket='acme-source-wdillingham')
@@ -12,7 +13,7 @@ with open(provided_policy, 'r') as policy:
         the_policy = json.load(policy)
 
 log_bucket = s3.Bucket('acme-logs-wdillingham')
-policy_response = log_bucket.put_bucket_policy(
+policy_response = client.put_bucket_policy(
     Bucket='acme-logs-wdillingham',
     Policy=json.dumps(the_policy)
 )
