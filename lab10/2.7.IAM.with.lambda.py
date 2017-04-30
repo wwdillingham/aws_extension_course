@@ -15,3 +15,4 @@ response = client.create_role(
     RoleName='lambda-s3-execution-role',
     AssumeRolePolicyDocument=rolepolicy
 )
+print(response)
