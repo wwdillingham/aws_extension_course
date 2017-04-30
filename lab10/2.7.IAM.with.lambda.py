@@ -1,9 +1,6 @@
 import boto3
 client = boto3.client('iam')
-
-response = client.create_role(
-    RoleName='lambda-s3-execution-role',
-    AssumeRolePolicyDocument='''{
+rolepolicy='''{
 	"Version": "2012-10-17",
 	"Statement": [{
 		"Sid": "",
@@ -14,4 +11,7 @@ response = client.create_role(
 		"Action": "sts:AssumeRole"
 	}]
 }'''
+response = client.create_role(
+    RoleName='lambda-s3-execution-role',
+    AssumeRolePolicyDocument=rolepolicy
 )
