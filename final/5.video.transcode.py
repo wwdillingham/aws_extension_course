@@ -12,7 +12,7 @@ s3.create_bucket(Bucket='out-code-wdillingham')
 
 #upload the video to the in bucket
 inbucket = 'in-code-wdillingham'
-data = open('Wildlife.wmv', 'rb')
+data = open('/tmp/Wildlife.wmv', 'rb')
 s3.Bucket(inbucket).put_object(Key='Wildlife.wmv', Body=data)
 
 create_topic_response = snsclient.create_topic(
