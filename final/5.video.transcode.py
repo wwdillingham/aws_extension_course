@@ -29,7 +29,7 @@ subscribe_response = sns_client.subscribe(
 pipeline_response = transcode_client.create_pipeline(
     Name='prob5_transcode_pipeline',
     InputBucket='in-code-wdillingham',
-    OutputBucket='out-codse-wdillingham',
+    OutputBucket='out-code-wdillingham',
     Role='arn:aws:iam::644009940612:role/Elastic_Transcoder_Default_Role',
     Notifications={
         'Completed': the_arn,
