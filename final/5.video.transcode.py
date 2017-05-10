@@ -39,10 +39,9 @@ pipeline_response = transcode_client.create_pipeline(
         
     },
 )
-print(pipeline_response)
 pipeline_arn=pipeline_response['Pipeline']['Arn']
 print(pipeline_arn)
 job_response = transcode_client.create_job(
-    PipelineId='prob5_transcode_pipeline',
+    PipelineId=pipeline_arn,
     OutputKeyPrefix='output.mp4',
 )
