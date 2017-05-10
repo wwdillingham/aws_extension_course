@@ -18,7 +18,7 @@ s3.Bucket(inbucket).put_object(Key='Wildlife.wmv', Body=data)
 create_topic_response = sns_client.create_topic(
     Name='TranscodeComplete',
 )
-the_arn = response['TopicArn']
+the_arn = create_topic_response['TopicArn']
 
 subscribe_response = sns_client.subscribe(
     TopicArn=the_arn,
