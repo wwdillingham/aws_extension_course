@@ -43,9 +43,4 @@ pipeline_response = transcode_client.create_pipeline(
 job_response = transcode_client.create_job(
     PipelineId='prob5_transcode_pipeline',
     OutputKeyPrefix='output.mp4',
-    Input=[
-        {
-            'Key': 'Wildlife.wmv',
-        },
-    ],
 )
