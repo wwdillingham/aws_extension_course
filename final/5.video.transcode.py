@@ -33,7 +33,10 @@ pipeline_response = transcode_client.create_pipeline(
     Role='arn:aws:iam::644009940612:role/Elastic_Transcoder_Default_Role',
     Notifications={
         'Completed': the_arn,
-        'Error': the_arn
+        'Error': the_arn,
+        'Progressing': the_arn,
+        'Warning': the_arn
+        
     },
 )
 
