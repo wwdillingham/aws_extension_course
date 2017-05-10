@@ -39,7 +39,7 @@ pipeline_response = transcode_client.create_pipeline(
         
     },
 )
-
+print(pipeline_response)
 job_response = transcode_client.create_job(
     PipelineId='prob5_transcode_pipeline',
     OutputKeyPrefix='output.mp4',
