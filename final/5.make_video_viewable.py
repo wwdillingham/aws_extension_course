@@ -8,7 +8,7 @@ target_object='output.wmv'
 
 
 put_bucket_acl_response = s3_client.put_bucket_acl(
-    ACL='public-read'
+    ACL='public-read',
     Bucket=target_bucket
 )
 
