@@ -42,6 +42,7 @@ pipeline_response = transcode_client.create_pipeline(
 pipeline_id=pipeline_response['Pipeline']['Id']
 job_response = transcode_client.create_job(
     PipelineId=pipeline_id,
+    PresetId='Web',
     Input={
         'Key': 'Wildlife.wmv',
         },
