@@ -39,7 +39,7 @@ pipeline_response = transcode_client.create_pipeline(
         
     },
 )
-#print(pipeline_response)
+print(pipeline_response)
 pipeline_arn=pipeline_response['Arn']
 print(pipeline_arn)
 job_response = transcode_client.create_job(
