@@ -30,7 +30,7 @@ pipeline_response = transcode_client.create_pipeline(
     Name='prob5_transcode_pipeline',
     InputBucket='in-code-wdillingham',
     OutputBucket='out-code-wdillingham',
-    Role='Elastic_Transcoder_Default_Role',
+    Role='arn:aws:iam::644009940612:role/Elastic_Transcoder_Default_Role',
     AwsKmsKeyArn='string',
     Notifications={
         'Completed': 'TranscodeComplete',
