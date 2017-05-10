@@ -47,6 +47,6 @@ job_response = transcode_client.create_job(
         },
     Output={
         'Key': 'output.wmv',
-        'PresetId': 'hls-1000k',
+        'PresetId': '1351620000001-100070',
         }
 )
