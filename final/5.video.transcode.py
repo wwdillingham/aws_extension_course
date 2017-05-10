@@ -15,7 +15,7 @@ inbucket = 'in-code-wdillingham'
 data = open('/tmp/Wildlife.wmv', 'rb')
 s3.Bucket(inbucket).put_object(Key='Wildlife.wmv', Body=data)
 
-create_topic_response = snsclient.create_topic(
+create_topic_response = sns_client.create_topic(
     Name='TranscodeComplete',
 )
 the_arn = response['TopicArn']
