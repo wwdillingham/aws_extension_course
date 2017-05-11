@@ -8,12 +8,13 @@ iam_client = boto3.client('iam')
 create1response = iam_client.create_user(
     UserName='diane-codestar'
 )
-create1response = iam_client.create_user(
+create2response = iam_client.create_user(
     UserName='zhen-codestar'
 )
 
 list_response = client.list_team_members(
     projectId='wdillingham-fin',
     )
-    
-print(create1response)
+
+arn_1 = create1response['User']['Arn']
+print(arn_1)
