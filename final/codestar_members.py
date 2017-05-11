@@ -4,7 +4,7 @@ import boto3
 client = boto3.client('codestar')
 iam_client = boto3.client('iam')
 
-me = iam_client.describe_user(
+me = iam_client.get_user(
     UserName='wdillingham'
 )
 
