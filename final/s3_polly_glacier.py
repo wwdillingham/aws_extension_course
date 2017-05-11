@@ -17,7 +17,7 @@ s3_resource.Bucket(cf_bucket).put_object(Key='s3_cf.json', Body=data)
 
 # create the stack (which in turn creates an s3 bucket for future polly files)
 cf_response = cf_client.create_stack(
-    StackName='neighborhood-development-stack',
+    StackName='neighborhood-development-stack2',
     TemplateURL='https://s3.amazonaws.com/cloudformation-input-bucket/s3_cf.json'
     )
 time.sleep(20)
