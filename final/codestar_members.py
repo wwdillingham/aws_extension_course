@@ -19,17 +19,17 @@ arn_zhen = create2response['User']['Arn']
 arn_me = me['User']['Arn']
 print(arn_me)
 
-associate_me = associate_team_member(
+associate_me = client.associate_team_member(
     projectId = 'wdillingham-fin',
     userArn = arn_me,
     projectRole = 'Owner'
 )
-associate_diane = associate_team_member(
+associate_diane = client.associate_team_member(
     projectId = 'wdillingham-fin',
     userArn = arn_diane,
     projectRole = 'Contributor'
 )
-associate_zhen = associate_team_member(
+associate_zhen = client.associate_team_member(
     projectId = 'wdillingham-fin',
     userArn = arn_zhen,
     projectRole = 'Contributor'
