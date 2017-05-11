@@ -3,8 +3,14 @@
 import boto3
 
 client = boto3.client('codestar')
+iam_client = boto3.client('iam')
 
-response = client.list_team_members(
+create1response = iam_client.create_user(
+    UserName='diane-codestar'
+)
+create1response = iam_client.create_user(
+    UserName='zhen-codestar'
+)
+list_response = client.list_team_members(
     projectId='wdillingham-fin',
     )
-print(response)
