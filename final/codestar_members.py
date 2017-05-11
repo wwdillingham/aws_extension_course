@@ -11,6 +11,9 @@ create1response = iam_client.create_user(
 create1response = iam_client.create_user(
     UserName='zhen-codestar'
 )
+
 list_response = client.list_team_members(
     projectId='wdillingham-fin',
     )
+    
+print(create1response)
