@@ -1,4 +1,4 @@
-import sys boto3 StringIO contextlib
+import sys, boto3, StringIO, contextlib
 polly = client("polly", 'us-east-1' )
 s3_resource = boto3.resource('s3')
 s3_client = boto3.client('s3')
@@ -33,7 +33,7 @@ if "AudioStream" in portugese_response:
         fo = open("portugese.mp3", "w+")  # something needs to be fixed here
         fo.write(data)
         fo.close()
-        
+
 spanish_response = polly.synthesize_speech(
     Text="Welcome to the City of Boston \
           Office of Neighborhood Development \
@@ -48,7 +48,7 @@ if "AudioStream" in spanish_response:
         fo = open("spanish.mp3", "w+")  # something needs to be fixed here
         fo.write(data)
         fo.close()
-
+        
 data = open('portugese.mp3', 'rb')
 s3_resource.Bucket(target_bucket).put_object(Key='portugese.mp3', Body=data)
 data = open('spanish.mp3', 'rb')
