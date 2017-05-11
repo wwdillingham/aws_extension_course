@@ -1,6 +1,7 @@
 import sys, boto3, StringIO, contextlib
 from boto3 import client
 from contextlib import closing
+import time
 polly = client("polly", 'us-east-1' )
 s3_resource = boto3.resource('s3')
 s3_client = boto3.client('s3')
@@ -19,7 +20,7 @@ cf_response = cf_client.create_stack(
     StackName='neighborhood-development-stack',
     TemplateURL='https://s3.amazonaws.com/cloudformation-input-bucket/s3_cf.json'
     )
-
+time.sleep(20)
 #do the polly translation
 portugese_response = polly.synthesize_speech(
     Text="Welcome to the City of Boston \
