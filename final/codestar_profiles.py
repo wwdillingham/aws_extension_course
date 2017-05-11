@@ -16,15 +16,15 @@ arn_diane = diane['User']['Arn']
 arn_zhen = zhen['User']['Arn']
 arn_me = me['User']['Arn']
 
-me_response = client.update_user_profile(
+me_response = client.create_user_profile(
     userArn=arn_me,
     displayName='Wes Dillingham',
 )
-zhen_response = client.update_user_profile(
+zhen_response = client.create_user_profile(
     userArn=arn_zhen,
     displayName='Zhenyu Zhao',
 )
-diane_response = client.update_user_profile(
+diane_response = client.create_user_profile(
     userArn=arn_diane,
     displayName='Diane Howard',
 )
