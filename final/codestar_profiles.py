@@ -38,3 +38,6 @@ describe_zhen = client.describe_user_profile(
 describe_diane = client.describe_user_profile(
     userArn=arn_diane
 )
+print(describe_me)
+print(describe_zhen)
+print(describe_diane)
