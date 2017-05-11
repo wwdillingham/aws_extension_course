@@ -1,8 +1,4 @@
-from boto3 import client
-import sys
-import boto3
-import StringIO   
-from contextlib import closing
+import sys boto3 StringIO contextlib
 polly = client("polly", 'us-east-1' )
 s3_resource = boto3.resource('s3')
 s3_client = boto3.client('s3')
@@ -12,16 +8,15 @@ cf_bucket = 'cloudformation-input-bucket'
 target_bucket = 'neighborhood-development-translation-bucket'
 
 s3_resource.create_bucket(Bucket=cf_bucket) #this is the bucket where cloudformation JSON objects live
-data = open('', 'rb')
-s3_resource.Bucket(cf_bucket).put_object(Key='portugese.mp3', Body=data)
+data = open('s3_cf.json', 'rb')
+s3_resource.Bucket(cf_bucket).put_object(Key='s3_cf.json', Body=data)
+
 
 # create the stack (which in turn creates an s3 bucket for future polly files)
 cf_response = client.create_stack(
     StackName='neighborhood-development-stack',
-    TemplateURL=
+    TemplateURL='https://s3.amazonaws.com/cloudformation-input-bucket/s3_cf.json'
     )
-
-sys.exit()
 
 #do the polly translation
 portugese_response = polly.synthesize_speech(
