@@ -1,0 +1,20 @@
+{
+  "Resources" : {
+   "S3Bucket" : {
+      "Type" : "AWS::S3::Bucket",
+      "Properties" : {
+         "AccessControl" : "PublicRead",
+         "BucketName" : "neighborhood-development-translation-bucket",
+      },
+      "DeletionPolicy" : "Retain"
+   }
+},
+"Outputs" : {
+   "S3BucketSecureURL" : {
+      "Value" : { "Fn::Join" : [
+         "", [ "https://", { "Fn::GetAtt" : [ "S3Bucket", "DomainName" ] } ]
+      ] },
+      "Description" : "This Bucket is for translated documents"
+   }
+}
+}
