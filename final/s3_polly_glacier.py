@@ -57,4 +57,17 @@ s3_resource.Bucket(target_bucket).put_object(Key='portugese.mp3', Body=data)
 data = open('spanish.mp3', 'rb')
 s3_resource.Bucket(target_bucket).put_object(Key='spanish.mp3', Body=data)
 
-#set the aging policy on the s3 bucket
+#create the glacier vault of the same name
+vault_creation_response = glacier_client.create_vault(
+    vaultName=target_bucket
+)
+
+#upload to glacier vault
+vault_bucket = s3_resource.Bucket(target_bucket) 
+for object in vault_bucket.objects.all():
+    with open(path, 'rb')
+    glacier_response = glacier_client.upload_archive(
+        vaultName=target_bucket,
+        archiveDescription='string',
+        body=object
+    )
