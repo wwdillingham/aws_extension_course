@@ -4,7 +4,7 @@
       "Type" : "AWS::S3::Bucket",
       "Properties" : {
          "AccessControl" : "PublicRead",
-         "BucketName" : "neighborhood-development-translation-bucket5",
+         "BucketName" : "neighborhood-development-translation-bucket6",
       },
       "DeletionPolicy" : "Retain"
    }
