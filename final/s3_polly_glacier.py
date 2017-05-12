@@ -65,9 +65,9 @@ vault_creation_response = glacier_client.create_vault(
 #upload to glacier vault
 vault_bucket = s3_resource.Bucket(target_bucket) 
 for object in vault_bucket.objects.all():
-    with open(path, 'rb')
+    with open(object, 'rb') as archive
     glacier_response = glacier_client.upload_archive(
         vaultName=target_bucket,
         archiveDescription='string',
-        body=object
+        body=archive
     )
